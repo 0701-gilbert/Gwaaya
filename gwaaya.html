@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWAAYA  ELECTRONICS AND SOLAR SOLUTIONS</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0066cc;
+            --accent-color: #ff9900;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-circle;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e68a00;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-top {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-contact {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .header-contact a {
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--dark-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .header-icons a {
+            color: var(--dark-color);
+            font-size: 20px;
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: var(--light-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 8px 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .old-price {
+            font-size: 16px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .add-to-cart {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        
+        .wishlist-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .wishlist-btn:hover {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin: 0 15px;
+        }
+        
+        .testimonial-img {
+            width: 600px;
+            height: 500px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+        
+        .testimonial-img img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-img img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-date {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 20px;
+            color: var(--secondary-color);
+            margin-top: 3px;
+        }
+        
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #666;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #ddd;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-top .container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .header-contact {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <p>WELCOME TO GWAAYA ELECTRONICS AND SOLAR SOLUTIONS</p>
+                <div class="header-contact">
+                    <a href="tel:+256701497946"><i class="fas fa-phone"></i> +256 701497946</a>
+                    <a href="mailto:info@gwaaya.com"><i class="fas fa-envelope"></i> info@gwaaya.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50" alt="GWAAYA Logo">
+                    <div class="logo-text">
+                        <h1>GWAAYA</h1>
+                        <p>Electronics & Solar Solutions</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Quality Electronics & Solar Solutions</h2>
+            <p>Discover our wide range of electronic products and solar energy solutions for your home and business at affordable prices.</p>
+            <a href="#products" class="btn btn-accent">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>We provide the best products and services to meet all your electronic and solar energy needs</p>
+                <p>Besides that we give discounts on almost all products.</p>
+                <p>The best of all is the delivering products to your homes at no extra costs as long as you are in Mbarara </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>QUALITY  PRODUCTS IS  OUR  ALLTIME OPTION</h3>
+                    <p>All our products are sourced from reputable manufacturers and come with warranties.</p>
+                    <p>This is bcause all the products are scourced from well known Global companies
+                        both in the country and outside
+                    </p>
+
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>FREE  DELIVERY </h3>
+                    <p>Free delivery on all orders within Mbarara city for purchases above 500,000 UGX.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer support team is available round the clock to assist you.</p>
+                    <p>We have a team to assist customers both in fields and at the work place </p>
+                    
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>We offer managable prices on all our products but basing on  quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products that we offer here</h2>
+                <p>Browse our wide selection of electronic products and solar solutions</p>
+            </div>
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="electronics">Electronics</button>
+                <button class="category-btn" data-category="solar">Solar Solutions</button>
+                <button class="category-btn" data-category="appliances">Home Appliances</button>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smart TV">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">55" Smart LED TV</h3>
+                        <div class="product-price">
+                            <span class="current-price">1,200,000 UGX</span>
+                            <span class="old-price">1,500,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card" data-category="solar">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Solar Panel">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Solar Solutions</span>
+                        <h3 class="product-title">300W Solar Panel</h3>
+                        <div class="product-price">
+                            <span class="current-price">450,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card" data-category="appliances">
+                    <div class="product-img">
+                        <img src="images/IMG-20241224-WA0057.jpeg"> 
+                        <span class="product-badge">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home Appliances</span>
+                        <h3 class="product-title">250L Refrigerator</h3>
+                        <div class="product-price">
+                            <span class="current-price">1,800,000 UGX</span>
+                            <span class="old-price">2,250,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smartphone">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Smartphone X5 Pro</h3>
+                        <div class="product-price">
+                            <span class="current-price">750,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card" data-category="solar">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Solar Inverter">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Solar Solutions</span>
+                        <h3 class="product-title">2KVA Solar Inverter</h3>
+                        <div class="product-price">
+                            <span class="current-price">1,500,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card" data-category="appliances">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1584564472417a574a39fb0a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Washing Machine">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home Appliances</span>
+                        <h3 class="product-title">Automatic Washing Machine</h3>
+                        <div class="product-price">
+                            <span class="current-price">1,350,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card" data-category="electronics">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Laptop">
+                        <span class="product-badge">Best Seller</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3 class="product-title">Ultra Slim Laptop</h3>
+                        <div class="product-price">
+                            <span class="current-price">2,800,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card" data-category="solar">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Solar Battery">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Solar Solutions</span>
+                        <h3 class="product-title">200AH Solar Battery</h3>
+                        <div class="product-price">
+                            <span class="current-price">1,200,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+             <!-- Product 9 -->
+             <div class="product-card" data-category="VIRTUAL ITEMS">
+                <div class="product-img">
+                    <img src="images/images (3).jpeg">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">In-game items</span>
+                    <h3 class="product-title">GAMERS</h3>
+                    <div class="product-price">
+                        <span class="current-price">100,000 UGX , 200,000 UGX , 500,000 UGX, 1,200,000 UGX</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+                  <!-- Product 10-->
+             <div class="product-card" data-category="OTHER ACCESSORIES">
+                <div class="product-img">
+                    <img src="images/IMG-20250414-WA0043.jpg">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">needed appliances</span>
+                    <h3 class="product-title">ACCESSORIES</h3>
+                    <div class="product-price">
+                        <span class="current-price">Price with order</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+  <!-- Product 11-->
+  <div class="product-card" data-category="OTHER ACCESSORIES">
+    <div class="product-img">
+        <img src="images/IMG-20250414-WA0164.jpg">
+    </div>
+    <div class="product-info">
+        <span class="product-category">Modernised music systems</span>
+        <h3 class="product-title">ACCESSORIES</h3>
+        <div class="product-price">
+            <span class="current-price">Price with order</span>
+        </div>
+        <div class="product-actions">
+            <button class="btn add-to-cart">Add to Cart</button>
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+        </div>
+    </div>
+</div>
+
+                <!-- Product 12 -->
+                <div class="product-card" data-category="LAPTOPS">
+                    <div class="product-img">
+                        <img src="images/IMG-20250119-WA0011.jpg">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">technology</span>
+                        <h3 class="product-title">PORTABLE LAPTOPS AND HARD DISKS</h3>
+                        <div class="product-price">
+                            <span class="current-price">800,000 UGX - 2,500,000 UGX</span>
+                        </div>
+                        <div class="product-actions">
+                <div class="product-card" data-category="LAPTOPS">
+                    <button class="btn add-to-cart">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About GWAAYA Electronics and Solar Solutions</h2>
+                    <p>Founded in 2023, GWAAYA Electronics and Solar Solutions has grown to become a leading provider of quality electronic products and solar energy solutions in Western Uganda.</p>
+                    <p>We are committed to providing our customers with the latest technology products at affordable prices, backed by excellent customer service and after-sales support.</p>
+                    <p>Our team of experienced professionals is always ready to help you find the right solutions for your home or business needs.</p>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Our Store">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Hear from our satisfied customers about their experience with our products and services
+                    that offer here at GWAAYA Electronics and solar solutions
+                </p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="section-img">
+                        <img src="">
+                    </div>
+                    <p class="testimonial-text">" I just appreciate yoir quality products, wchich are always at the 
+                        best prices as compared to other shops country wide thanks also for your quick delivering of
+                        your products when told "</p>
+                    <p class="testimonial-author">- GILBERT.K . MASAKA CITY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Testimonials Section -->
+ <section class="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our Customers Say</h2>
+            <p>Hear from our satisfied customers about their experience with our products and services</p>
+        </div>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-img">
+                    <img src="images/IMG-20211123-WA0015_1.jpg">
+                </div>
+                <p class="testimonial-text">"The solar system I bought from GWAAYA has completely transformed my home. I no longer worry about power outages and my electricity bills have reduced significantly."</p>
+                <p class="testimonial-author">- Sarah K., Mbarara</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News & Tips</h2>
+                <p>Stay updated with the latest trends and tips in electronics and solar energy</p>
+            </div>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">June 15, 2023</span>
+                        <h3 class="blog-title">How to Choose the Right Solar System for Your Home</h3>
+                        <p class="blog-excerpt">Learn how to determine the right solar system size and components for your home energy needs...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">May 28, 2023</span>
+                        <h3 class="blog-title">Top 5 Energy Saving Appliances for 2023</h3>
+                        <p class="blog-excerpt">Discover the most energy-efficient appliances that can help you save on your electricity bills...</p>
+                        <a href="#" class="btn">Read More</a
